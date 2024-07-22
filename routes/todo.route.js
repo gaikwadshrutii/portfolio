@@ -1,6 +1,8 @@
+const { addTodo, getAllTodos } = require("../controller/todo.controller")
+
 const route = require("express").Router()
 
-const { getAllTodos, addTodo } = require("../controller/todo.controller")
+// const { getAllTodos, addTodo } = require("../controller/todo.controller")
 
 route
     .get("/get", getAllTodos)

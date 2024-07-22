@@ -6,14 +6,14 @@ require("dotenv").config()
 mongoose.connect(process.env.MONGO_URL)
 const app = express()
 
-// app.use(express.static("dist"))
+app.use(express.static("dist"))
 app.use(express.json())
 app.use(cors({
     origin: true
 }))
 
 
-app.use("/api", require("./routes/todo.route"))
+app.use("/api/msg", require("./routes/todo.route"))
 
 app.use("*", (req, res) => {
     res.status(404).json({ message: "Resource Not Found" })
